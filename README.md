@@ -1,2 +1,2 @@
 Этот проект является результатом решения тестового задания компании palax.
-Ознакомиться с результатом можно по ссылке: [vivan1992.github.io/palax/](vivan1992.github.io/palax/)
+Ознакомиться с результатом можно по ссылке: [https://vivan1992.github.io/palax/](https://vivan1992.github.io/palax/)
