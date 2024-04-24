@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/palax/static/css/main.6aea679f.css",
-    "main.js": "/palax/static/js/main.ffdf6446.js",
+    "main.css": "/palax/static/css/main.437bc72c.css",
+    "main.js": "/palax/static/js/main.5fd5a895.js",
     "index.html": "/palax/index.html",
     "static/media/8666597_trash_2_icon.svg": "/palax/static/media/8666597_trash_2_icon.59e344f1053e4a550fe5.svg",
     "static/media/edit_icon_128873.svg": "/palax/static/media/edit_icon_128873.25810d851a741e4372f4.svg",
-    "main.6aea679f.css.map": "/palax/static/css/main.6aea679f.css.map",
-    "main.ffdf6446.js.map": "/palax/static/js/main.ffdf6446.js.map"
+    "main.437bc72c.css.map": "/palax/static/css/main.437bc72c.css.map",
+    "main.5fd5a895.js.map": "/palax/static/js/main.5fd5a895.js.map"
   },
   "entrypoints": [
-    "static/css/main.6aea679f.css",
-    "static/js/main.ffdf6446.js"
+    "static/css/main.437bc72c.css",
+    "static/js/main.5fd5a895.js"
   ]
 }
