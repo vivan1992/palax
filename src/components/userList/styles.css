@@ -65,6 +65,12 @@
   padding: 0 60px 0 5px;
   min-height: 25px;
   box-shadow: 38.81658935546875px 11.762604713439941px 58.81301498413086px rgba(199, 199, 199, 0.6);
+  display: flex;
+}
+
+.post__creating {
+  font-size: 18px;
+  justify-content: center;
 }
 
 .post__button-trash {
@@ -91,7 +97,35 @@
   cursor: pointer;
 }
 
-.post__button-trash:hover, .post__button-edit:hover {
+.post__button-create {
+  border: 1px solid #000;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+  position: relative;
+  margin-left: 20px;
+}
+
+.post__button-create::after {
+  content: '';
+  width: 10px;
+  height: 1px;
+  background-color: #000;
+  position: absolute;
+  left: 50%;
+}
+
+.post__button-create::before {
+  content: '';
+  width: 10px;
+  height: 1px;
+  background-color: #000;
+  position: absolute;
+  left: 50%;
+  transform: rotate(90deg);
+}
+
+.post__button-trash:hover, .post__button-edit:hover, .post__button-create:hover {
   opacity: 0.4;
   transition: all 0.15s ease-out;
 }

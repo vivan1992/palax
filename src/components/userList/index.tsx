@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import './styles.css';
 import { IUsers, IPosts } from '../../interface/common';
+import { nanoid } from 'nanoid'
 
 interface IUsersProps {
   users: IUsers[],
@@ -9,10 +10,11 @@ interface IUsersProps {
   selectedUsers: string[],
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void,
   onEdit: (id: number, body: string) => void,
-  onDelete: (id: number) => void
+  onDelete: (id: number) => void,
+  onCreate: (userId: number) => void
 }
 
-const UserList: React.FC<IUsersProps> = ({users, posts, selectedUsers, onClick, onEdit, onDelete}) => {
+const UserList: React.FC<IUsersProps> = ({users, posts, selectedUsers, onClick, onEdit, onDelete, onCreate}) => {
   return (
     <div className='container'>
       <ul className='header'>
@@ -34,10 +36,14 @@ const UserList: React.FC<IUsersProps> = ({users, posts, selectedUsers, onClick, 
                 {user.username}
               </button>
               <ul className='posts'>
+              {selectedUsers.includes(`${user.id}`) ? <li className='post post__creating'>
+                Добавить пост
+                <button className='post__button-create' onClick={() => onCreate(user.id)}/>
+              </li> : null}
                 {posts.map(post => {
                   if (post.userId === user.id) {
                     return (
-                    <li className='post' key={post.id}>
+                    <li className='post' key={nanoid()}>
                         {post.body}
                         <button className='post__button-edit' onClick={() => onEdit(post.id, post.body)}/>
                         <button className='post__button-trash' onClick={() => onDelete(post.id)}/>

@@ -4,7 +4,8 @@ import "./style.css";
 interface IPopupProps {
   post: {
     id: number,
-    body: string
+    body: string,
+    isCreate?: boolean
   },
   onClose: () => void,
   onUpdate: (id: number, body: string) => void,
@@ -38,15 +39,16 @@ const Popup: React.FC<IPopupProps> = ({ post, onClose, onUpdate, isOpen }) => {
   return (
     <div className='popup'>
       <form className='popup__container' onSubmit={handleSubmitForm}>
+        <p className="popup__title">{post.isCreate ? 'Создание поста' : 'Редактирование поста'}</p>
         <textarea
           name='body'
-          className='popup__title'
+          className='popup__body'
           onChange={(e) => setBody(e.target.value)}
           value={body}
           rows={8}
           cols={50}
         />
-        <button className='popup__button'>Сохранить</button>
+        <button  disabled={body === ''} className='popup__button'>Сохранить</button>
       </form>
       <button className='popup__close' onClick={onClose}/>
     </div>

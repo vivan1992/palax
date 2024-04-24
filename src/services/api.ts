@@ -1,4 +1,7 @@
 import { IUsers, IPosts } from "../interface/common";
+import { customAlphabet } from 'nanoid';
+
+const nanoid = customAlphabet('1234567890', 5);
 
 const apiUrl = 'https://jsonplaceholder.typicode.com/';
 
@@ -59,6 +62,30 @@ const api = {
       if (!response.ok) {
         throw new Error(`Ошибка ${response.status}`);
       }
+    } catch (error) {
+      console.log('Error fetching post', error);
+      throw error;
+    }
+  },
+
+  creatingPost: async (body: string, userId: number): Promise<IPosts> => {
+    try {
+      const response = await fetch(`${apiUrl}/posts`, {
+        method: 'POST',
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify({
+          title: 'foo',
+          body: body,
+          userId: userId,
+        }),
+      });
+      if (!response.ok) {
+        throw new Error(`Ошибка ${response.status}`);
+      }
+      const updateData: IPosts = await response.json();
+      return updateData;
     } catch (error) {
       console.log('Error fetching post', error);
       throw error;
